@@ -1,0 +1,61 @@
+[ln-box] {
+	margin:10px;
+	overflow: hidden;
+
+	box-shadow: 2px 2px 3px #999;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+
+	display: flex;
+	flex-direction: column;
+}
+
+
+[ln-box] header, [ln-box] footer {
+	overflow: hidden;
+	padding: 10px;
+}
+
+[ln-box] header h1
+, [ln-box] header h2
+, [ln-box] header h3
+, [ln-box] header h4
+, [ln-box] header h5
+, [ln-box] header h6 {
+	float: left;
+	font-size: 14px;
+	margin: 0;
+	padding: 0;
+	font-weight: normal;
+}
+
+[ln-box] .lnActions {
+	float: right;
+}
+
+[ln-box] .lnActions li {
+	display: inline;
+}
+[ln-box] .lnActions li button {
+	margin: 0;
+	padding: 0 5px;
+	line-height: inherit;
+}
+
+.lnActions button {
+	font-family: "Material Icons";
+}
+
+
+[ln-box] [ln-body] {
+	padding: 10px;
+	max-height: 100vh;
+	transition: max-height 300ms ease-in;
+	flex: 1;
+}
+
+[ln-box].collapsed [ln-body] {
+	max-height: 0;
+	padding-top: 0;
+	padding-bottom: 0;
+}

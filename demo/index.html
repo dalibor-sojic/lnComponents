@@ -1,0 +1,523 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Live Networks GUI Elements</title>
+
+	<link rel="stylesheet" type="text/css" href="../components/base/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="../components/base/css/base.css">
+	<link rel="stylesheet" type="text/css" href="../components/base/css/typography.css">
+	<link rel="stylesheet" type="text/css" href="../components/base/css/breadcrumb.css">
+	<link rel="stylesheet" type="text/css" href="../components/base/css/sizes.css">
+	<link rel="stylesheet" type="text/css" href="../components/base/css/helpers.css">
+	<link rel="stylesheet" type="text/css" href="../components/base/css/ln.css">
+
+
+	<link rel="stylesheet" type="text/css" href="../components/panel/panel.css">
+	<link rel="stylesheet" type="text/css" href="../components/box/box.css">
+	<link rel="stylesheet" type="text/css" href="../components/forms/form.css">
+	<link rel="stylesheet" type="text/css" href="../components/forms/buttons.css">
+	<link rel="stylesheet" type="text/css" href="../components/forms/switch.css">
+	<link rel="stylesheet" type="text/css" href="../components/dialog/dialog.css">
+
+
+
+	<link rel="stylesheet" type="text/css" href="../components/toast/toast.css">
+
+	<link rel="stylesheet" type="text/css" href="../components/themes/csLn.css">
+	<link rel="stylesheet" type="text/css" href="../components/themes/theme.css">
+
+
+
+	<link rel="stylesheet" type="text/css" href="../components/base/icons/icons.css">
+
+
+</head>
+
+<body class="csLn">
+
+	<div class="content" ln-panel="rows">
+
+		<header ln-header>
+			<img src="../src/img/LiveNetworks-logo-horizontal.svg" />
+			<nav ln-navigation class="hidden">
+				
+			</nav>
+
+			<nav class="">
+
+			</nav>
+
+		</header>
+
+		<section ln-main ln-panel="cols">
+
+			<aside id="sidebar">
+				<button ln-toggle-aside="#sidebar" class="mi">menu</button>
+				<nav>
+					<ul>
+						<li>
+							<a href="#" class="dashboard">Dashboard</a>
+						</li>
+						<li class="hasSub">
+							<a href="#" class="item1 active">Main Item 1</a>
+							<ul>
+								<li>
+									<a href="#">Sub item 1.1</a>
+								</li>
+								<li class="hasSub">
+									<a href="#" class="active">Sub item 1.2</a>
+									<ul>
+										<li>
+											<a href="#">Sub item 1.2.1</a>
+										</li>
+										<li>
+											<a href="#">Sub item 1.2.2</a>
+										</li>
+										<li>
+											<a href="#">Sub item 1.2.3</a>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<a href="#">Sub item 1.3</a>
+								</li>
+							</ul>
+						</li>
+
+						<li class="hasSub">
+							<a href="#" class="item2 active">Main Item 2</a>
+							<ul>
+								<li>
+									<a href="#">Sub item 2.1</a>
+								</li>
+								<li class="hasSub">
+									<a href="#" class="active">Sub item 2.2</a>
+									<ul>
+										<li>
+											<a href="#">Sub item 2.2.1</a>
+										</li>
+										<li>
+											<a href="#">Sub item 2.2.2</a>
+										</li>
+										<li>
+											<a href="#">Sub item 2.2.3</a>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<a href="#">Sub item 2.3</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+			</aside>
+
+			<main>
+				<ol class="breadcrumb">
+					<li><a href="#">Home</a></li>
+					<li><a href="#">Level 1</a></li>
+					<li><a href="#">Level 1.1</a></li>
+				</ol>
+
+				<h1>Demo Components</h1>
+
+
+				<section ln-box>
+					<header>
+						<h2>
+							Buttons
+						</h2>
+
+						<ul class="lnActions">
+							<li><button class="collapse">expand_less</button></li>
+							<li><button class="collapse">expand_more</button></li>
+							<li><button class="collapse">close</button></li>
+						</ul>
+					</header>
+					<main ln-body>
+						<p>
+							<button type="button">Default</button>
+							<button type="button" class="primary">Primary</button>
+							<button type="button" class="blue">Blue</button>
+							<button type="button" class="red">Red</button>
+							<button type="button" class="orange">Orange</button>
+							<button type="button" class="gold">Gold</button>
+							<button type="button" class="black">Black</button>
+							<button type="button" class="white">White</button>
+							<button type="button" class="success">Success</button>
+							<button type="button" class="info">Info</button>
+							<button type="button" class="warning">Warning</button>
+							<button type="button" class="danger">Danger</button>
+							<button type="button" class="link">Link</button>
+						</p>
+
+						<p>
+							<button type="button" class="large">Large</button>
+							<button type="button">Default</button>
+							<button type="button" class="small">Small</button>
+							<button type="button" class="mini">Mini</button>
+						</p>
+
+
+						<p>
+							<button type="button">Default</button>
+							<button type="button" class="primary" icon="fingerprint">Primary</button>
+							<button type="button" class="blue">Blue</button>
+							<button type="button" class="red">Red</button>
+							<button type="button" class="orange">Orange</button>
+							<button type="button" class="gold">Gold</button>
+							<button type="button" class="black">Black</button>
+							<button type="button" class="white">White</button>
+							<button type="button" class="success">Success</button>
+							<button type="button" class="info">Info</button>
+							<button type="button" class="warning">Warning</button>
+							<button type="button" class="danger">Danger</button>
+							<button type="button" class="link">Link</button>
+						</p>
+
+						<p>
+							<button type="button" class="large" ln-showDialog="dialog1">Open Dialog</button>
+						</p>
+
+					</main>
+					<footer>
+
+					</footer>
+				</section>
+
+				<form ln-box id="formElementsBox">
+					<header>
+						<h2>
+							Switches
+						</h2>
+
+						<ul class="lnActions">
+							<li><button type="button">expand_less</button></li>
+							<li><button type="button">expand_more</button></li>
+							<li><button type="button" ln-close="formElementsBox">close</button></li>
+						</ul>
+					</header>
+					<main ln-body>
+						<p>
+							<button type="button" class="large">Large</button>
+							<label ln-switch class="large">
+								<input type="radio" name="x" value="x" />
+								<span class="wrap">
+									<span class="on">On</span>
+									<span class="icon">favorite</span>
+									<span class="off">Off</span>
+								</span>
+							</label>
+
+						</p>
+
+						<p>
+							<button type="button">Default</button>
+							<label ln-switch>
+								<input type="radio" name="x" value="x" />
+								<span class="wrap">
+									<span class="on">On</span>
+									<span class="icon">favorite</span>
+									<span class="off">Off</span>
+								</span>
+							</label>
+						</p>
+
+						<p>
+							<button type="button" class="small">Small</button>
+							<label ln-switch class="small">
+								<input type="radio" name="x" value="x" />
+								<span class="wrap">
+									<span class="on">On</span>
+									<span class="icon">favorite</span>
+									<span class="off">Off</span>
+								</span>
+							</label>
+
+						</p>
+
+						<p>
+							<button type="button" class="mini">Mini</button>
+							<label ln-switch class="mini">
+								<input type="radio" name="x" value="x" />
+								<span class="wrap">
+									<span class="on">On</span>
+									<span class="icon">favorite</span>
+									<span class="off">Off</span>
+								</span>
+							</label>
+						</p>
+
+					</main>
+					<footer class="alignRight">
+						<button type="reset">Cancel</button>
+						<button>Submit</button>
+					</footer>
+				</form>
+
+
+				<form ln-box id="formElementsBoxHorizontal" class="horizontal">
+					<header>
+						<h2>
+							Form Elements Horizontal
+						</h2>
+
+						<ul class="lnActions">
+							<li><button type="button">expand_less</button></li>
+							<li><button type="button">expand_more</button></li>
+							<li><button type="button" ln-close="formElementsBox">close</button></li>
+						</ul>
+					</header>
+					<main ln-body>
+
+						<p ln-control>
+							<label for="field1">Large field:</label>
+							<span ln-input ln-iconLeft="search">
+								<!-- Input -->
+								<input type="text" id="field1" name="field1" required >
+								<!-- Optional -->
+								<span class="validation">
+									Validation message
+								</span>
+							</span>
+						</p>
+
+
+
+						<p ln-control>
+							<label for="field2">Input field:</label>
+							<span ln-input ln-iconRight="search">
+								<!-- Input -->
+								<input type="text" id="field2" name="field2" required>
+								<!-- Optional -->
+								<span class="validation">
+									Validation message
+								</span>
+							</span>
+						</p>
+
+
+
+						<p ln-control>
+							<label for="field3">Small field:</label>
+							<span ln-input>
+								<!-- Input -->
+								<input type="text" id="field3" name="field3" required>
+								<!-- Optional -->
+								<span class="validation">
+									Validation message
+								</span>
+							</span>
+						</p>
+
+
+						<p ln-control>
+							<label for="field3">Mini field:</label>
+							<span ln-input>
+								<!-- Input -->
+								<input type="text" id="field3" name="field3" required>
+								<!-- Optional -->
+								<span class="validation">
+									Validation message
+								</span>
+							</span>
+								<button type="button">adsf</button>
+						</p>
+
+
+
+					</main>
+					<footer class="alignRight">
+						<button type="reset">Cancel</button>
+						<button>Submit</button>
+					</footer>
+				</form>
+
+
+				<form ln-box id="formElementsBoxVertical" class="vertical">
+					<header>
+						<h2>
+							Form Elements Vertical
+						</h2>
+
+						<ul class="lnActions">
+							<li><button type="button">expand_less</button></li>
+							<li><button type="button">expand_more</button></li>
+							<li><button type="button" ln-close="formElementsBox">close</button></li>
+						</ul>
+					</header>
+					<main ln-body>
+
+						<p ln-control>
+							<label for="field4">Input field:</label>
+							<span ln-input>
+								<!-- Input -->
+								<input type="text" id="field4" name="field4" required>
+								<!-- Optional -->
+								<span class="validation">
+									Validation message
+								</span>
+							</span>
+						</p>
+
+
+
+						<p ln-control>
+							<label for="field5">Input field:</label>
+							<span ln-input>
+								<!-- Input -->
+								<input type="text" id="field5" name="field5" required>
+								<!-- Optional -->
+								<span class="validation">
+									Validation message
+								</span>
+							</span>
+						</p>
+
+
+
+						<p ln-control>
+							<label for="field6">Input field:</label>
+							<span ln-input>
+								<!-- Input -->
+								<input type="text" id="field6" name="field6" required>
+								<!-- Optional -->
+								<span class="validation">
+									Validation message
+								</span>
+							</span>
+						</p>
+
+
+
+					</main>
+					<footer class="alignRight">
+						<button type="reset">Cancel</button>
+						<button>Submit</button>
+					</footer>
+				</form>
+
+
+
+			</main>
+		</section>
+
+		<footer ln-footer>
+			<p class="ln">Developed by &copy; <a href="#">Live Networks</a></p>
+		</footer>
+
+	</div>
+
+	<div id="floats">
+
+		<form ln-dialog class="scale" id="dialog1">
+			<section ln-box>
+				<header>
+					<h2>
+						Dialog example 1
+					</h2>
+					<ul class="lnActions">
+						<li><button ln-close type="reset">close</button></li>
+					</ul>
+				</header>
+
+				<main ln-panel="cols">
+					Main content
+					<button ln-showDialog="dialog2">Show Dialog 2</button>
+				</main>
+
+				<footer>
+
+					<p class="alignRight">
+						<button class="btn btn-primary btn-md" type="reset" ln-close >
+							Cancel
+						</button>
+						<button class="btn btn-success btn-md" type="button" ln-submit>
+							Submit
+						</button>
+					</p>
+				</footer>
+			</section>
+		</form>
+
+		<form ln-dialog class="hidden" id="dialog2">
+			<section ln-box>
+				<header>
+					<h2>
+						Dialog example 2
+					</h2>
+					<ul class="lnActions">
+						<li><button ln-close type="reset">close</button></li>
+					</ul>
+				</header>
+
+				<main ln-panel="cols">
+					Main content
+				</main>
+
+				<footer>
+
+					<p class="alignRight">
+						<button class="btn btn-primary btn-md" type="reset" ln-close >
+							Cancel
+						</button>
+						<button class="btn btn-success btn-md" type="button" ln-submit>
+							Submit
+						</button>
+					</p>
+				</footer>
+			</section>
+		</form>
+
+
+
+		<ol id="toaster" ln-toast class="top right">
+			<li class="error">
+				<button ln-close class="close mi">close</button>
+				<header>Error</header>
+				<p>Do to be agreeable conveying oh assurance. Wicket longer admire do barton vanity itself do in it. Preferred to sportsmen it engrossed listening</p>
+			</li>
+			<li class="success">
+				<button ln-close class="close mi">close</button>
+				<header>Success</header>
+				<p>Success message</p>
+			</li>
+			<li class="info">
+				<button ln-close class="close mi">close</button>
+				<header>Info</header>
+				<p>Info message</p>
+			</li>
+			<li class="warning">
+				<button ln-close class="close mi">close</button>
+				<header>Info</header>
+				<p>Info message</p>
+			</li>
+		</ol>
+	</div>
+
+	<!-- Script -->
+	<script src="../components/base/ln-1.0.js"></script>
+	<script src="../components/dialog/dialog-1.0.js"></script>
+	<script src="../components/dialog/dialog-2.0.js"></script>
+	<script src="../components/toast/toast.js"></script>
+
+
+
+	<script type="text/javascript">
+		
+		document.addEventListener('lnDialogClosed', function(e) {
+			console.log(e);
+		})
+
+		document.addEventListener('lnDialogSubmit', function(e) {
+			console.log('Dialog submited')
+			console.log(e);
+		})
+	</script>
+
+
+</body>
+</html>

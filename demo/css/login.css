@@ -1,0 +1,93 @@
+.video-background {
+	background: #000;
+	position: fixed;
+	top: 0; right: 0; bottom: 0; left: 0;
+	z-index: -99;
+}
+
+.video-background video {
+	position: absolute;
+	top: 50%; 
+	left: 50%;
+	-webkit-transform: translateX(-50%) translateY(-50%);
+	transform: translateX(-50%) translateY(-50%);
+	min-width: 100%; 
+	min-height: 100%; 
+	width: auto; 
+	height: auto;
+	z-index: -1000; 
+	overflow: hidden;
+}
+
+body {
+	color: #fff;
+}
+
+
+.setFocus, form {
+	  position: absolute;
+  left: 50%;
+  top: 50%;
+  
+  /*
+  Nope =(
+  margin-left: -25%;
+  margin-top: -25%;
+  */
+
+  /* 
+  Yep!
+  */
+  transform: translate(-50%, -50%);
+  
+  /*
+  Not even necessary really. 
+  e.g. Height could be left out!
+  */
+  width: 40%;
+  height: 50%;
+}
+
+
+/* Focus efects */
+
+video, .setFocus, form, .focused {
+	-webkit-transition: all .5s ease-in-out;
+	-moz-transition: all .5s ease-in-out;
+	-ms-transition: all .5s ease-in-out;
+	-o-transition: all .5s ease-in-out;
+	transition: all .5s ease-in-out;
+}
+
+/* Default */
+.video-background video {
+	opacity: .1;
+}
+
+form {
+	opacity: 0;
+}
+
+.setFocus {
+	opacity: 1;
+}
+
+
+
+/*Focused*/
+
+.focused {
+	flex: 3;
+}
+
+.focused video {
+	opacity: 1;
+}
+
+.focused form {
+	opacity: 1;
+}
+
+.focused .setFocus {
+	opacity: 0;
+}

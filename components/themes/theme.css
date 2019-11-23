@@ -1,0 +1,89 @@
+body {
+	background-color: #f8f8f8;
+}
+
+
+.info {
+	background-color: var(--infoBg);
+	color: var(--infoTxt);
+}
+
+.success {
+	background-color: var(--successBg);
+	color: var(--successTxt);
+}
+
+.error, .danger {
+	background-color: var(--errorBg);
+	color: var(--errorTxt);
+}
+
+.warning {
+	background-color: var(--warningBg);
+	color: var(--warningTxt);
+}
+
+
+.breadcrumb {
+	background-color: #eee;
+}
+
+
+
+.pagination .active {
+	background-color: var(--mainColor);
+}
+
+
+/* Toast */
+[ln-toast] button {
+	color: #fff;
+}
+
+
+
+[ln-header] {
+	background-color: var(--headerColor);
+}
+
+
+[ln-box] {
+	border-color: var(--boxBorderColor);
+}
+
+[ln-box] header, [ln-box] footer {
+	background-color: var(--boxHeaderColor);
+	border-bottom: 1px solid var(--boxBorderColor);
+}
+
+[ln-body] {
+	background-color: var(--boxBodyColor);
+}
+
+
+
+[ln-dialog] main {
+	background-color: var(--boxBodyColor);
+}
+
+
+aside {
+	background-color: var(--mainColor);
+	color: var(--mainTextColor);
+}
+
+aside a {
+	display: block;
+	border-bottom: 1px solid var(--mainLightColor);
+}
+
+
+[ln-switch] .on {
+	background-color: var(--mainColor);
+
+}
+
+[ln-switch] .off {
+	background-color: var(--boxHeaderColor);
+
+}

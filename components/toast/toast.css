@@ -1,0 +1,77 @@
+[ln-toast] {
+	position: absolute;
+}
+
+[ln-toast] li {
+	margin: 10px;
+	width: 300px;
+	padding: 10px;
+	text-align: left;
+	position: relative;
+
+
+	text-shadow: 1px 1px #000;
+}
+
+[ln-toast] li [ln-close] {
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	border: none;
+	margin: 0;
+	padding: 0;
+	background: transparent;
+	font-weight: bolder;
+}
+
+[ln-toast] header {
+	font-weight: bold;
+	font-style: 14px;
+}
+
+[ln-toast] li header, [ln-toast] li p {
+	margin-left: 50px;
+}
+
+[ln-toast] li:before {
+	font-family: 'Material Icons';
+	float: left;
+	font-size: 30px;
+	margin: 10px;
+}
+
+[ln-toast] li.success:before {
+	content: 'check_circle';
+}
+
+
+[ln-toast] li.error:before {
+	content: 'error';
+}
+
+
+[ln-toast] li.warning:before {
+	content: 'report';
+}
+
+
+[ln-toast] li.info:before {
+	content: 'new_releases';
+}
+
+
+
+
+
+[ln-toast].top {
+	top: 60px;
+}
+[ln-toast].bottom {
+	bottom: 0;
+}
+[ln-toast].right {
+	right: 10px;
+}
+[ln-toast].left {
+	left: 0;
+}

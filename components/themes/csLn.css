@@ -1,0 +1,64 @@
+:root {
+
+	--successBg: rgba(0,166,81, .8);
+	--successTxt: #fff;
+	--errorBg: rgba(204,36,36, .8);
+	--errorTxt: #fff;
+	--infoBg: rgba(33,169,225, .8);
+	--infoTxt: #fff;
+	--warningBg: rgba(250,216,57, .8);
+	--warningTxt: #fff;
+
+
+
+	--mainColor: #446CA9;
+	--mainLightColor: #fff;
+
+	--mainTextColor: #fff;
+
+	--headerColor: #ccc;
+
+	--boxHeaderColor: #f0f0f1;
+	--boxBorderColor: #ebebeb;
+
+	--boxBodyColor: #fff;
+
+
+
+
+	--largePadding: 10px;
+	--defaultPadding: 5px;
+	--smallPadding: 3px;
+	--miniPadding: 1px;
+}
+
+:root .inverse {
+	--mainColor: #446CA9;
+	--mainLightColor: #fff;
+
+	--mainTextColor: #fff;
+
+	--headerColor: #ccc;
+
+	--boxHeaderColor: #f0f0f1;
+	--boxBorderColor: #ebebeb;
+
+	--boxBodyColor: #000;
+}
+
+
+
+
+::-webkit-scrollbar {
+	width: 10px;
+}
+
+::-webkit-scrollbar-track {
+	background-color: #ccc
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: #ddd;
+	outline: 1px solid #bbb;
+}
+

@@ -1,0 +1,205 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Live Networks GUI Elements</title>
+
+	<link rel="stylesheet" type="text/css" href="../components/base/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="../components/base/css/base.css">
+	<link rel="stylesheet" type="text/css" href="../components/base/css/typography.css">
+	<link rel="stylesheet" type="text/css" href="../components/base/css/breadcrumb.css">
+	<link rel="stylesheet" type="text/css" href="../components/base/css/sizes.css">
+	<link rel="stylesheet" type="text/css" href="../components/base/css/helpers.css">
+	<link rel="stylesheet" type="text/css" href="../components/base/css/ln.css">
+
+
+	<link rel="stylesheet" type="text/css" href="../components/panel/panel.css">
+	<link rel="stylesheet" type="text/css" href="../components/box/box.css">
+	<link rel="stylesheet" type="text/css" href="../components/forms/form.css">
+	<link rel="stylesheet" type="text/css" href="../components/forms/buttons.css">
+	<link rel="stylesheet" type="text/css" href="../components/forms/switch.css">
+	<link rel="stylesheet" type="text/css" href="../components/dialog/dialog.css">
+
+	<link rel="stylesheet" type="text/css" href="../components/themes/csLn.css">
+	<link rel="stylesheet" type="text/css" href="../components/themes/theme.css">
+
+
+
+	<link rel="stylesheet" type="text/css" href="../components/base/icons/icons.css">
+
+</head>
+
+<body class="csLn">
+
+	<div class="content" ln-panel="rows">
+
+		<header ln-header>
+			<img src="../src/img/LiveNetworks-logo-horizontal.svg" />
+			<nav ln-navigation class="hidden">
+				
+			</nav>
+		</header>
+
+		<section ln-main ln-panel="cols">
+
+			<aside id="sidebar">
+				<button ln-toggle-aside="#sidebar">Hamburger</button>
+				<nav>
+					<ul>
+						<li>
+							<a href="#" class="dashboard">Dashboard</a>
+						</li>
+						<li class="hasSub">
+							<a href="#" class="item1 active">Main Item 1</a>
+							<ul>
+								<li>
+									<a href="#">Sub item 1.1</a>
+								</li>
+								<li class="hasSub">
+									<a href="#" class="active">Sub item 1.2</a>
+									<ul>
+										<li>
+											<a href="#">Sub item 1.2.1</a>
+										</li>
+										<li>
+											<a href="#">Sub item 1.2.2</a>
+										</li>
+										<li>
+											<a href="#">Sub item 1.2.3</a>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<a href="#">Sub item 1.3</a>
+								</li>
+							</ul>
+						</li>
+
+						<li class="hasSub">
+							<a href="#" class="item2 active">Main Item 2</a>
+							<ul>
+								<li>
+									<a href="#">Sub item 2.1</a>
+								</li>
+								<li class="hasSub">
+									<a href="#" class="active">Sub item 2.2</a>
+									<ul>
+										<li>
+											<a href="#">Sub item 2.2.1</a>
+										</li>
+										<li>
+											<a href="#">Sub item 2.2.2</a>
+										</li>
+										<li>
+											<a href="#">Sub item 2.2.3</a>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<a href="#">Sub item 2.3</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+			</aside>
+
+			<main>
+
+				<button ln-showDialog="dialog1">Show dialog 1</button>
+				<a href="#dialog2" ln-showDialog="dialog2">Show dialog 2</a>
+
+			</main>
+		</section>
+
+		<footer ln-footer>
+			<p class="ln">Developed by &copy; <a href="#">Live Networks</a></p>
+		</footer>
+
+	</div>
+
+
+	<div id="floats">
+
+		<form ln-dialog class="hidden" id="dialog1">
+			<section ln-box>
+				<header>
+					<h2>
+						Dialog example 1
+					</h2>
+					<ul class="lnActions">
+						<li><button ln-close type="reset">close</button></li>
+					</ul>
+				</header>
+
+				<main ln-panel="cols">
+					Main content
+				</main>
+
+				<footer>
+
+					<p class="alignRight">
+						<button class="btn btn-primary btn-md" type="reset" ln-close >
+							Cancel
+						</button>
+						<button class="btn btn-success btn-md" type="button" ln-submit>
+							Submit
+						</button>
+					</p>
+				</footer>
+			</section>
+		</form>
+
+		<form ln-dialog class="hidden" id="dialog2" name="dialog2">
+
+			<section ln-box>
+				<header>
+					Dialog example 2
+					<ul class="lnActions">
+						<li><button ln-close type="reset">close</button></li>
+					</ul>
+				</header>
+				<main ln-panel="cols">
+					Main content
+					<input type="text" name="field1" />
+				</main>
+
+				<footer>
+					<p class="alignRight">
+						<button class="btn btn-primary btn-md" type="reset" ln-close>
+							Cancel
+						</button>
+						<button class="btn btn-success btn-md" type="button" ln-submit>
+							Submit
+						</button>
+					</p>
+				</footer>
+			</section>
+		</form>
+
+	</div>
+
+
+	<!-- Script -->
+	<script src="../components/dialog/dialog.js"></script>
+
+	<script>
+		document.addEventListener('lnDialogClosed', function(e) {
+			console.log(e);
+		})
+
+		document.addEventListener('lnDialogSubmit', function(e) {
+			console.log('Dialog submited')
+			console.log(e);
+		})
+	</script>
+
+
+
+</body>
+</html>
+
+
+</body>
+</html>

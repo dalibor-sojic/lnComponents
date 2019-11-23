@@ -1,0 +1,23 @@
+.mi, .icon {
+	font-family: 'Material Icons';
+}
+
+button::-moz-focus-inner {
+	border: none;
+}
+
+.alignRight {
+	text-align: right;
+}
+
+.hidden {
+	display: none !important;
+}
+
+
+.flexBottom {
+	align-self: flex-end !important;
+}
+.flexTop {
+	align-self: flex-start !important;
+}

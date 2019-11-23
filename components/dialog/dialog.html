@@ -1,0 +1,123 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Live Networks Dialog</title>
+
+	<link rel="stylesheet" type="text/css" href="../../src/css/base/reset.css">
+	<link rel="stylesheet" type="text/css" href="../../src/css/base/base.css">
+	<link rel="stylesheet" type="text/css" href="../../src/css/base/ln.css">
+	<link rel="stylesheet" type="text/css" href="../../components/panel/panel.css">
+
+
+	<link rel="stylesheet" type="text/css" href="../../components/dialog/dialog.css">
+
+	<link rel="stylesheet" type="text/css" href="../../src/css/base/helpers.css">
+	<link rel="stylesheet" type="text/css" href="../../src/css/themes/light.css">
+
+
+</head>
+
+<body>
+
+	<header ln-header>
+		<img src="../../src/img/LiveNetworks-logo-horizontal.svg" />
+	</header>
+
+	<section ln-main ln-panel="cols">
+
+		<aside  id="sidebar">
+			<button ln-toggle-aside="#sidebar">Hamburger</button>
+			<p>adf asdfadsfasf as</p>
+			<p>adf asdfadsfasf as</p>
+			
+		</aside>
+
+		<main id="m">
+			Main window
+
+			<button ln-showDialog="dialog1">Show dialog 1</button>
+			<button ln-showDialog="dialog2">Show dialog 2</button>
+		</main>
+	</section>
+
+	<footer ln-footer>
+		<p class="ln">Developed by &copy; <a href="#">Live Networks</a></p>
+	</footer>
+
+
+
+
+
+	<form ln-dialog class="hidden" id="dialog1">
+		<section ln-box>
+			<button class="close" ln-close type="reset">x</button>
+			<header>
+				Dialog example 1
+			</header>
+			<main ln-panel="cols">
+				Main content
+
+			</main>
+
+			<footer>
+
+				<p class="right">
+					<button class="btn btn-primary btn-md" type="reset" ln-close >
+						Cancel
+					</button>
+					<button class="btn btn-success btn-md" type="button" ln-submit>
+						Submit
+					</button>
+				</p>
+			</footer>
+		</section>
+	</form>
+
+
+
+	<form ln-dialog class="hidden" id="dialog2" name="dialog2">
+
+		<section ln-box>
+			<button class="close" ln-close type="reset">x</button>
+			<header>
+				Dialog example 2
+			</header>
+			<main ln-panel="cols">
+				Main content
+				<input type="text" name="field1" />
+			</main>
+
+			<footer>
+				<p class="right">
+					<button class="btn btn-primary btn-md" type="reset" ln-close>
+						Cancel
+					</button>
+					<button class="btn btn-success btn-md" type="button" ln-submit>
+						Submit
+					</button>
+				</p>
+			</footer>
+		</section>
+	</form>
+
+
+
+	<!-- Script -->
+	<script src="../../components/dialog/dialog.js"></script>
+
+	<script>
+		document.addEventListener('lnDialogClosed', function(e) {
+			console.log(e);
+		})
+
+		document.addEventListener('lnDialogSubmit', function(e) {
+			console.log('Dialog submited')
+			console.log(e);
+		})
+	</script>
+
+</body>
+</html>

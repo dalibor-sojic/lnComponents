@@ -1,0 +1,14 @@
+h1, h2, h3, h4, h5, h6 {
+	font-weight: normal;
+	margin: 40px 10px;
+}
+
+h1 {
+	font-size: 45px;
+}
+h2 {
+	font-size: 40px;
+}
+h3 {
+	font-size: 38px;
+}

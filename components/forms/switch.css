@@ -1,0 +1,55 @@
+[ln-switch] {
+	position: relative;
+
+	padding: 0 !important;
+
+	float: left;
+	margin: 5px;
+	border: 1px solid red;
+	overflow: hidden;
+	border-radius: 20px;
+
+	cursor: pointer;
+	background-clip: padding-box;
+}
+
+[ln-switch] > input {
+	position: absolute;
+	left:-100px;
+}
+
+
+[ln-switch] .wrap {
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+
+	justify-content: center; /* align items in Main Axis */
+	align-items: stretch; /* align items in Cross Axis */
+	align-content: stretch; /* Extra space in Cross Axis */
+
+	x-justify-content: center;
+	x-align-items: stretch;
+
+	flex-direction: row;
+
+
+	/* position: absolute !important; */
+	width: 150% !important;
+	margin-left: -50%;
+	padding: 0;
+
+	transition: margin 500ms;
+}
+
+[ln-switch] > input:checked + .wrap {
+	margin-left: 0;
+}
+
+[ln-switch] .wrap span {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	flex: 1;
+	padding: 5px;
+}
