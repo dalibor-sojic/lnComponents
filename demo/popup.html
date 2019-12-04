@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Live Networks Popup</title>
+
+	<link rel="stylesheet" type="text/css" href="../components/base/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="../components/base/css/base.css">
+	<link rel="stylesheet" type="text/css" href="../components/base/css/typography.css">
+	<link rel="stylesheet" type="text/css" href="../components/base/css/breadcrumb.css">
+	<link rel="stylesheet" type="text/css" href="../components/base/css/sizes.css">
+	<link rel="stylesheet" type="text/css" href="../components/base/css/helpers.css">
+	<link rel="stylesheet" type="text/css" href="../components/base/css/ln.css">
+
+
+</head>
+
+<body class="csLn">
+
+	<a href="http://google.com"
+		ln-popup="width=300,height=300,scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no"
+		target="x"
+	>
+		Google.com
+	</a>
+
+	<button onclick="createLink()">Add</button>
+
+	<!-- Script -->
+	<script src="../components/popup/popup.js"></script>
+
+	<script>
+
+
+		function createLink() {
+			var link = document.createElement("a");
+			link.href = "http://facebook.com";
+			link.innerText = 'Facebook';
+			link.setAttribute('ln-popup', 'width=300,height=300,scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no');
+
+			document.body.append(link);
+		}
+	</script>
+
+
+</body>
+</html>

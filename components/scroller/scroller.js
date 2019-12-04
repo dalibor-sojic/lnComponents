@@ -1,5 +1,11 @@
 // Usage:
-// <TAG1 ln-scroller>
+// <TAG1 ln-scroller
+	// ln-scroller-speed="500"
+	// ln-scroller-interval="5000"
+	// ln-scroller-direction="vertical"
+	// ln-scroller-="500"
+
+// >
 // 	<button ln-prev>
 // 	<button ln-next>
 // 	<div class="ln-viewport">
@@ -30,6 +36,11 @@
 
 	function _setObserver() {
 		let thiz = this;
+
+		// http://help.dottoro.com/ljdchxcl.php
+		// https://developer.mozilla.org/en-US/docs/Web/Guide/Events/Mutation_events
+
+
 		var observer = new MutationObserver(function(mutations) {
 			mutations.forEach(function(mutation) {
 				if (mutation.type == "attributes") {
@@ -77,23 +88,38 @@
 		// add event listeners for prev
 		this.btn.prev = this.dom.querySelectorAll('[ln-scroller-prev]');
 		this.btn.prev.forEach(function(button) {
-			button.addEventListener('click', function(){
+			// button.addEventListener('click', function(){
+			// });
+
+			button.onclick = () => {
 				thiz.prev();
-			});
+				
+			}
 
 		});
 
 
-		this.dom.addEventListener("wheel", function(x) {
+		// this.dom.addEventListener("wheel", function(x) {
+		// 	x.preventDefault();
+		// 	if (x.deltaY > 0) {
+		// 		thiz.next();
+		// 	}
+		// 	else {
+		// 		thiz.prev();
+		// 	}
+		// 	return false;
+		// }, {passive: true});
+
+
+		this.dom.onwheel = (x) => {
+			x.preventDefault();
 			if (x.deltaY > 0) {
 				thiz.next();
 			}
 			else {
 				thiz.prev();
 			}
-			preventDefault();
-			return false;
-		}, {passive: true});
+		}
 
 
 	}

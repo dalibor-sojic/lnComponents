@@ -45,10 +45,7 @@
 
 	function _constructor(dom) {
 		this.dom = dom;
-		// capture 'this'
-		let thiz = this;
-
-		_init.call(this);
+		// _init.call(this);
 
 		_setObserver.call(this);
 
@@ -67,8 +64,8 @@
 		// this.audio.load();
 		this.audio.play();
 
-		this.localStorage = {};
-		this.localStorage.volume = this.instanceName + '.volume';
+		this.ls = {};
+		this.ls.volume = this.instanceName + '.volume';
 
 
 		this._eventDetails = {
@@ -98,16 +95,27 @@
 			thiz.setVolume(this.value / 100);
 		});
 
-		this.setVolume(localStorage.getItem(this.localStorage.volume) || 0.2);
+		this.setVolume(localStorage.getItem(this.ls.volume) || 0.2);
 
-		this.volumeControll = this.dom.addEventListener("wheel", function(x) {
+		this.volumeControll = this.dom.addEventListener("wheel", function(event) {
+			event = event || window.event;
+
 			if (x.deltaY > 0) {
 				thiz.setVolume(thiz.audio.volume + 0.05);
 			}
 			else {
 				thiz.setVolume(thiz.audio.volume - 0.05);
 			}
+			
+			if(event.preventDefault){
+				event.preventDefault();
+			}
+			if (event.stopPropagation) {
+				event.stopPropagation();
+			}
+			return false;
 		}, {passive: true});
+
 
 		this.audio.addEventListener('volumechange', function(x) {
 			console.log(x);
@@ -141,7 +149,7 @@
 	function setVolume(value) {
 		this.audio.volume = value;
 		this.volumeSlider.value = value * 100;
-		localStorage.setItem(this.localStorage.volume, value);
+		localStorage.setItem(this.ls.volume, value);
 	}
 
 
