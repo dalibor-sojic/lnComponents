@@ -5,6 +5,26 @@
 
 (function(){ 
 	const DOM_ATTRIBUTE = 'ln';
+	
+	_domObserver();
+	
+	function _domObserver() {
+		let observer = new MutationObserver(function(mutations) {
+			mutations.forEach(function(mutation) {
+				if (mutation.type == 'childList') {
+					document.querySelectorAll('[ln-popup]').forEach(function(item) {
+						window.lnPopup(item);
+					})
+
+				}
+			});
+		});
+
+		observer.observe(document.body, {
+			childList: true
+		});
+	}
+
 
 	// if lnDialog is already defined, return
 	if (window.lnPopup != undefined || window.lnPopup != null) {
@@ -24,27 +44,8 @@
 
 	function _constructor(dom) {
 		this.dom = dom;
-		_domObserver.call(this);
 		_getOptions.call(this);
 		return this;
-	}
-
-	function _domObserver() {
-		let thiz = this;
-		let observer = new MutationObserver(function(mutations) {
-			mutations.forEach(function(mutation) {
-				if (mutation.type == 'childList') {
-					document.querySelectorAll('[ln-popup]').forEach(function(item) {
-						window.lnPopup(item);
-					})
-
-				}
-			});
-		});
-
-		observer.observe(document.body, {
-			childList: true
-		});
 	}
 
 	function _init() {
