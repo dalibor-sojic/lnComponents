@@ -5,8 +5,11 @@
 
 (function(){ 
 	const DOM_ATTRIBUTE = 'ln';
-	
-	_domObserver();
+
+	// if lnDialog is already defined, return
+	if (window.lnPopup != undefined || window.lnPopup != null) {
+		return;
+	}
 	
 	function _domObserver() {
 		let observer = new MutationObserver(function(mutations) {
@@ -26,20 +29,17 @@
 	}
 
 
-	// if lnDialog is already defined, return
-	if (window.lnPopup != undefined || window.lnPopup != null) {
-		return;
-	}
+	_domObserver();
+	
 
 	function lnPopup(dom) {
-		var existing = dom[DOM_ATTRIBUTE];
-		if (existing) {
-			return existing;
-		}
-
-		var lnComponent = new _constructor(dom);
-		dom[DOM_ATTRIBUTE] = lnComponent;
-		return lnComponent;
+		document.querySelectorAll('[ln-popup]').forEach(function(item) {
+			var existing = link[DOM_ATTRIBUTE];
+			if (!existing) {
+				var lnComponent = new _constructor(link);
+				link[DOM_ATTRIBUTE] = lnComponent;
+			}
+		})
 	}
 
 	function _constructor(dom) {
@@ -75,6 +75,4 @@
 
 })();
 
-document.querySelectorAll('[ln-popup]').forEach(function(item) {
-	window.lnPopup(item);
-})
+window.lnPopup(item);

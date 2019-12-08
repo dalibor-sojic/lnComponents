@@ -6,6 +6,11 @@
 
 
 
+	// if lnAjaxify is already defined, return
+	if (window.lnAjaxify != undefined || window.lnAjaxify != null) {
+		return;
+	}
+
 
 
 
@@ -16,30 +21,48 @@
 	// let config = { attributes: true, childList: true, characterData: true };
 
 
- //  var observer = new MutationObserver(function(mutations) {
- //    mutations.forEach(function(mutation) {
- //      if (mutation.type === 'childList') {
- //        var list_values = [].slice.call(list.children)
- //            .map( function(node) { return node.innerHTML; })
- //            .filter( function(s) {
- //              if (s === '<br />') {
- //                return false;
- //              }
- //              else {
- //                return true;
- //              }
- //        });
- //        console.log(list_values);
- //      }
- //    });
- //  });
+	//  var observer = new MutationObserver(function(mutations) {
+	//    mutations.forEach(function(mutation) {
+	//      if (mutation.type === 'childList') {
+	//        var list_values = [].slice.call(list.children)
+	//            .map( function(node) { return node.innerHTML; })
+	//            .filter( function(s) {
+	//              if (s === '<br />') {
+	//                return false;
+	//              }
+	//              else {
+	//                return true;
+	//              }
+	//        });
+	//        console.log(list_values);
+	//      }
+	//    });
+	//  });
 
   
 	// observer.observe(target, config);
 
 
 	const DOM_ATTRIBUTE = 'ln';
+	
+	function _domObserver() {
+		let observer = new MutationObserver(function(mutations) {
+			mutations.forEach(function(mutation) {
+				if (mutation.type == 'childList') {
+					document.querySelectorAll('[ln-ajax-target]').forEach(function(item) {
+						window.lnPopup(item);
+					})
 
+				}
+			});
+		});
+
+		observer.observe(document.body, {
+			childList: true
+		});
+	}
+
+	_domObserver();
 
 	const events = {
 		'lnLinkClicked': {
@@ -56,11 +79,6 @@
 		}
 	}
 
-	// if lnAjaxify is already defined, return
-	if (window.lnAjaxify != undefined || window.lnAjaxify != null) {
-		return;
-	}
-
 	function lnAjaxify(dom) {
 
 		dom.querySelectorAll('a[ln-ajax-target]').forEach((link) => {
@@ -69,7 +87,6 @@
 				var lnComponent = new _constructor(link);
 				link[DOM_ATTRIBUTE] = lnComponent;
 			}
-
 		});
 
 
