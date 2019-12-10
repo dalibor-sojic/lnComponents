@@ -1,12 +1,11 @@
 {
-  "name": "@livenetworks/popup",
-  "version": "1.0.6",
-  "description": "Plain JavaScript Component. It open native window.open popup without writing single line of JavaScript.",
+  "name": "@livenetworks/ajaxify",
+  "version": "1.0.0",
+  "description": "Plain JavaScript Component. It convert regular links to ajax links.",
   "keywords": [
-    "popup"
+    "ajax"
     , "component"
     , "native javascript"
-    , "native popup"
     , "vanila javascript"
   ],
   "homepage": "https://github.com/liveNetworks/lnComponents",

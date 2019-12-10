@@ -6,7 +6,7 @@
 (function(){ 
 	const DOM_ATTRIBUTE = 'ln';
 
-	// if lnDialog is already defined, return
+	// if lnPopup is already defined, return
 	if (window.lnPopup != undefined || window.lnPopup != null) {
 		return;
 	}
@@ -28,16 +28,14 @@
 		});
 	}
 
-
 	_domObserver();
 	
-
 	function lnPopup(dom) {
 		document.querySelectorAll('[ln-popup]').forEach(function(item) {
-			var existing = link[DOM_ATTRIBUTE];
+			var existing = item[DOM_ATTRIBUTE];
 			if (!existing) {
-				var lnComponent = new _constructor(link);
-				link[DOM_ATTRIBUTE] = lnComponent;
+				var lnComponent = new _constructor(item);
+				item[DOM_ATTRIBUTE] = lnComponent;
 			}
 		})
 	}
@@ -75,4 +73,4 @@
 
 })();
 
-window.lnPopup(item);
+window.lnPopup(document.body);

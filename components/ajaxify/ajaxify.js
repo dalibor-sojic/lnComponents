@@ -4,44 +4,10 @@
 	// <a ln-ajax-target="divId">ajax load</a>
 	// <div id="divId"></div>
 
-
-
 	// if lnAjaxify is already defined, return
 	if (window.lnAjaxify != undefined || window.lnAjaxify != null) {
 		return;
 	}
-
-
-
-
-	// let target = document.body;
-	// var MutationObserver = window.MutationObserver || window.WebKitMutationObserver || window.MozMutationObserver;
-	// var target = document.body;
-	// let observer = new MutationObserver(handle_state_continuity);
-	// let config = { attributes: true, childList: true, characterData: true };
-
-
-	//  var observer = new MutationObserver(function(mutations) {
-	//    mutations.forEach(function(mutation) {
-	//      if (mutation.type === 'childList') {
-	//        var list_values = [].slice.call(list.children)
-	//            .map( function(node) { return node.innerHTML; })
-	//            .filter( function(s) {
-	//              if (s === '<br />') {
-	//                return false;
-	//              }
-	//              else {
-	//                return true;
-	//              }
-	//        });
-	//        console.log(list_values);
-	//      }
-	//    });
-	//  });
-
-  
-	// observer.observe(target, config);
-
 
 	const DOM_ATTRIBUTE = 'ln';
 	
@@ -50,7 +16,7 @@
 			mutations.forEach(function(mutation) {
 				if (mutation.type == 'childList') {
 					document.querySelectorAll('[ln-ajax-target]').forEach(function(item) {
-						window.lnPopup(item);
+						window.lnAjaxify(item);
 					})
 
 				}
@@ -79,17 +45,12 @@
 		}
 	}
 
-	function lnAjaxify(dom) {
-
-		dom.querySelectorAll('a[ln-ajax-target]').forEach((link) => {
-			var existing = link[DOM_ATTRIBUTE];
-			if (!existing) {
-				var lnComponent = new _constructor(link);
-				link[DOM_ATTRIBUTE] = lnComponent;
-			}
-		});
-
-
+	function lnAjaxify(link) {
+		var existing = link[DOM_ATTRIBUTE];
+		if (!existing) {
+			var lnComponent = new _constructor(link);
+			link[DOM_ATTRIBUTE] = lnComponent;
+		}
 	}
 
 	function _constructor(link) {
@@ -120,8 +81,6 @@
 				// console.log('This always runs...');
 				dispatchEvent.call(thiz, 'lnXhrEnded');
 			}
-
-
 
 			// if the clicked link is equal to current page, do nothing
 			if (link.href !== window.location.href) {

@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Live Networks Popup</title>
+
+</head>
+
+<body class="csLn">
+
+	<a href="http://google.com"
+		ln-popup="width=300,height=300,scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no"
+		target="x"
+	>
+		Google.com
+	</a>
+
+	<button onclick="createLink()">Add</button>
+
+	<!-- Script -->
+	<script src="../popup.js" defer></script>
+
+
+	<!-- Following script is for demo purpose, showing dynamically added links -->
+	<script>
+		function createLink() {
+			var link = document.createElement("a");
+			link.href = "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2F%40livenetworks%2Fpopup";
+			link.innerText = 'Facebook';
+			link.setAttribute('ln-popup', 'width=555,height=745,scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no');
+
+			document.body.append(link);
+		}
+	</script>
+
+
+</body>
+</html>
