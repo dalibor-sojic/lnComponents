@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Live Networks draggable</title>
+
+	<style>
+		div {
+			position: absolute;
+			z-index: 9;
+			border: 1px solid #6ccbf7;
+		}
+
+		header {
+			background-color: #6ccbf7;
+			text-align: center;
+			padding: 10px;
+			cursor: move;
+		}
+		section {
+			padding: 30px 10px;
+			text-align: center;
+		}
+	</style>
+
+</head>
+
+<body class="csLn">
+
+	<div ln-draggable>
+		<header>
+			Drag me
+		</header>
+		<section>
+			Div content
+		</section>
+	</div>
+
+	<button onclick="createDiv()">Add</button>
+
+	<!-- Script -->
+	<script src="../draggable.js" defer></script>
+
+
+	<!-- Following script is for demo purpose, showing dynamically added links -->
+	<script>
+		function createDiv() {
+			var div = document.querySelectorAll("div")[0].cloneNode(true);
+			
+			document.body.append(div);
+		}
+	</script>
+
+
+</body>
+</html>
