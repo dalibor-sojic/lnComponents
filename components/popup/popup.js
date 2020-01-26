@@ -31,7 +31,16 @@
 	_domObserver();
 	
 	function lnPopup(dom) {
-		dom.querySelectorAll('[ln-popup]').forEach(function(item) {
+		let items = dom.querySelectorAll('[ln-popup]');
+
+		if (items.length == 0) {
+			items = [];
+		}
+		if (dom.hasAttribute('ln-popup')) {
+			items.push(dom);
+		}
+
+		items.forEach(function(item) {
 			var existing = item[DOM_ATTRIBUTE];
 			if (!existing) {
 				var lnComponent = new _constructor(item);
