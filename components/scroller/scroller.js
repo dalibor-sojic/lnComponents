@@ -16,14 +16,15 @@
 // </TAG1>
 
 (function(){ 
-	const DOM_ATTRIBUTE = 'ln';
+	const DOM_SELECTOR = '[ln-scroller]';
+	const DOM_ATTRIBUTE = 'lnScroller';
 
 	// if lnDialog is already defined, return
-	if (window.lnScroller != undefined || window.lnScroller != null) {
+	if (window[DOM_ATTRIBUTE] != undefined || window[DOM_ATTRIBUTE] != null) {
 		return;
 	}
 
-	function lnScroller(dom) {
+	function constructor(dom) {
 		var existing = dom[DOM_ATTRIBUTE];
 		if (existing) {
 			return existing;
@@ -32,6 +33,10 @@
 		var lnComponent = new _constructor(dom);
 		dom[DOM_ATTRIBUTE] = lnComponent;
 		return lnComponent;
+	}
+
+	function _findElements(domRoot) {
+
 	}
 
 	function _setObserver() {
@@ -181,7 +186,7 @@
 	}
 
 	// make lnScroller globaly avaliable
-	window.lnScroller = lnScroller;
+	window[DOM_ATTRIBUTE] = constructor;
 	_constructor.prototype.next = next;
 	_constructor.prototype.prev = prev;
 
