@@ -28,12 +28,14 @@
 	<!-- Following script is for demo purpose, showing dynamically added links -->
 	<script>
 		function createLink() {
+			var div = document.createElement("div");
 			var link = document.createElement("a");
 			link.href = "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2F%40livenetworks%2Fpopup";
 			link.innerText = 'Facebook';
 			link.setAttribute('ln-popup', 'width=555,height=745,scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no');
+			div.append(link);
 
-			document.body.append(link);
+			document.body.append(div);
 		}
 	</script>
 

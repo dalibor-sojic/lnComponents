@@ -18,8 +18,7 @@
 	}
 
 	function constructor(domRoot) {
-		this._event = null;
-
+		// this._event = null;
 		_findElements(domRoot);
 	}
 
@@ -49,7 +48,7 @@
 				if (mutation.type == 'childList') {
 					console.log(mutation.addedNodes);
 					mutation.addedNodes.forEach(function(item) {
-						_constructor(item);
+						_findElements(item);
 					})
 				}
 			});
