@@ -18,7 +18,6 @@
 	}
 
 	function constructor(domRoot) {
-		// this._event = null;
 		_findElements(domRoot);
 	}
 
@@ -85,13 +84,11 @@
 	// Edit Below
 
 	function _init() {
-		let thiz = this;
 		this.dom.onclick = function(event) {
 			event = event || window.event;
 			event.preventDefault();
 			
 			_target = event.target;
-			console.log(_target);
 
 			window.open(_target.href, _target.target, _handleParams.call(this));
 			_target = null;
@@ -101,7 +98,6 @@
 	}
 
 	function _handleParams() {
-		console.log(_target);
 		if (!_shouldCenter.call(this)) {
 			return _target.getAttribute('ln-popup');
 		}
@@ -129,16 +125,9 @@
 	function _joinToString(options) {
 		result = [];
 		for(let item in options) {
-			console.log(item);
 			result.push(item + '=' + options[item]);
 		}
 		return result.join(',');
-	}
-
-
-	// https://stackoverflow.com/questions/5999998/check-if-a-variable-is-of-function-type
-	function isFunction(functionToCheck) {
-		return functionToCheck && {}.toString.call(functionToCheck) === '[object Function]';
 	}
 
 	// make lnPopup globaly avaliable
