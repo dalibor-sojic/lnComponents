@@ -10,8 +10,6 @@
 	const DOM_SELECTOR = 'ln-popup';
 	const DOM_ATTRIBUTE = 'lnPopup';
 
-	let _target = null;
-
 	// if the component is already defined, return
 	if (window[DOM_ATTRIBUTE] != undefined || window[DOM_ATTRIBUTE] != null) {
 		return;
@@ -24,8 +22,10 @@
 	function _findElements(domRoot) {
 		let items = domRoot.querySelectorAll('[' + DOM_SELECTOR + ']') || [];
 
+		console.log(domRoot.querySelectorAll('[' + DOM_SELECTOR + ']'));
+
 		if (domRoot.hasAttribute(DOM_SELECTOR)) {
-			items.push(dom);
+			items.push(domRoot);
 		}
 
 		items.forEach(function(item) {
@@ -82,6 +82,8 @@
 
 	
 	// Edit Below
+
+	let _target = null;
 
 	function _init() {
 		this.dom.onclick = function(event) {

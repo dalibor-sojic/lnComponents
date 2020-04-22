@@ -1,21 +1,50 @@
 // Usage:
 // <div ln-draggable>
 
-(function(){ 
-	const DOM_ATTRIBUTE = 'ln';
+(function(){
+	const DOM_SELECTOR = 'ln-draggable';
+	const DOM_ATTRIBUTE = 'lnDraggable';
 
-	// if lnDraggable is already defined, return
-	if (window.lnDraggable != undefined || window.lnDraggable != null) {
+
+	// if the component is already defined, return
+	if (window[DOM_ATTRIBUTE] != undefined || window[DOM_ATTRIBUTE] != null) {
 		return;
 	}
-	
+
+	function constructor(domRoot) {
+		_findElements(domRoot);
+	}
+
+	function _findElements(domRoot) {
+		let items = domRoot.querySelectorAll('[' + DOM_SELECTOR + ']') || [];
+
+		console.log(typeof(items));
+
+		if (domRoot.hasAttribute(DOM_SELECTOR)) {
+			items.push(domRoot);
+		}
+
+		items.forEach(function(item) {
+			if (!item[DOM_ATTRIBUTE]) {
+				item[DOM_ATTRIBUTE] = new _constructor(item);
+			}
+		})
+	}
+
+	function _constructor(dom) {
+		this.dom = dom;
+		_init.call(this);
+		return this;
+	}
+
 	function _domObserver() {
 		let observer = new MutationObserver(function(mutations) {
 			mutations.forEach(function(mutation) {
 				if (mutation.type == 'childList') {
-					mutation.addedNodes.forEach(function(node) {
-						window.lnDraggable(node);
-					});
+					console.log(mutation.addedNodes);
+					mutation.addedNodes.forEach(function(item) {
+						_findElements(item);
+					})
 				}
 			});
 		});
@@ -26,30 +55,9 @@
 	}
 
 	_domObserver();
+
 	
-	function lnDraggable(dom) {
-		let items = dom.querySelectorAll('[ln-draggable]');
-
-		if (items.length == 0) {
-			items = [];
-		}
-		if (dom.hasAttribute('ln-draggable')) {
-			items.push(dom);
-		}
-		items.forEach(function(item) {
-			var existing = item[DOM_ATTRIBUTE];
-			if (!existing) {
-				var lnComponent = new _constructor(item);
-				item[DOM_ATTRIBUTE] = lnComponent;
-			}
-		})
-	}
-
-	function _constructor(dom) {
-		this.dom = dom;
-		_init.call(this);
-		return this;
-	}
+	// Edit Below
 
 	function _init() {
 		let thiz = this;
@@ -94,17 +102,12 @@
 		return this;
 	}
 
-	  function _closeDragElement() {
-		// stop moving when mouse button is released:
-	  }
-
-	// https://stackoverflow.com/questions/5999998/check-if-a-variable-is-of-function-type
-	function isFunction(functionToCheck) {
-		return functionToCheck && {}.toString.call(functionToCheck) === '[object Function]';
+	function _closeDragElement() {
+	// stop moving when mouse button is released:
 	}
 
 	// make lnDraggable globaly avaliable
-	window.lnDraggable = lnDraggable;
+	window[DOM_ATTRIBUTE] = constructor;
 
 })();
 

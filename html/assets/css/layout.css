@@ -20,15 +20,19 @@
 #ln-layout > nav {
 	grid-area: navigation;
 	width: 200px;
-	height: 100%;
 	overflow: auto;
+
+	display: flex;
+	flex-direction: column;
 
 	background-color: blue;
 }
 
 #ln-layout > main {
 	grid-area: main;
-
+	display: flex;
+	flex-direction: column;
+	height: 100%;
 }
 
 #ln-layout footer {
