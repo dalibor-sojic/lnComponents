@@ -8,11 +8,12 @@
   <body>
     <!-- For testing purposes -->
 
-    <span ln-obfuscator="13">Hello World</span>
-    <form>
-      <input type="text" placeholder="Enter text to obfuscate" />
+    <span ln-obfuscator="13"><n uers="lb znzn">Uryyb Jbeyq</n></span>
+
+    <form id="deObfuscate">
+      <input type="text" placeholder="Enter text to deObfuscate" />
       <label for="rot">ROT:</label>
-      <select id="rot" name="rot">
+      <select id="deObfuscateRot" name="rot">
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
@@ -39,25 +40,28 @@
         <option value="24">24</option>
         <option value="25">25</option>
       </select>
-      <input type="submit" value="Obfuscate" />
+      <input type="submit" value="deObfuscate" />
     </form>
 
-    <script>
-      let form = document.querySelector("form");
-      let submitBtn = document.querySelector("[type='submit']");
-      let input = document.querySelector("[type='text']");
-
-      form.addEventListener("submit", function (e) {
-        e.preventDefault();
-        let rot = document.querySelector("#rot");
-        let paragraph = document.createElement("p");
-        paragraph.setAttribute("ln-obfuscator", rot.value);
-        paragraph.textContent = input.value;
-        document.body.appendChild(paragraph);
-        input.value = "";
-      });
-    </script>
-    <!-- Script -->
     <script src="../ln-obfuscator.js" defer></script>
+    <script>
+      function deObfuscate() {
+        let form = document.querySelector("#deObfuscate");
+        let submitBtn = document.querySelector("#deObfuscate [type='submit']");
+        let input = document.querySelector("#deObfuscate [type='text']");
+
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+          let rot = document.querySelector("#deObfuscateRot");
+          let paragraph = document.createElement("p");
+          paragraph.setAttribute("ln-obfuscator", rot.value);
+          paragraph.innerHTML = input.value;
+          document.body.appendChild(paragraph);
+          input.value = "";
+        });
+      }
+
+      deObfuscate();
+    </script>
   </body>
 </html>

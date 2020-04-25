@@ -1,5 +1,5 @@
 // Usage:
-// Add the tag "ln-obfuscate" with the ROT number and all HTML inside will be obfuscated by the ROT amount
+// Add the tag "ln-obfuscate" with the ROT number and all obfuscated HTML inside will be deobfuscated by the ROT amount
 
 (function () {
   const DOM_SELECTOR = "ln-obfuscator";
@@ -35,7 +35,7 @@
     return this;
   }
 
-  // Listenes for DOM changes
+  // Listens for DOM changes
   function _domObserver() {
     let observer = new MutationObserver(function (mutations) {
       mutations.forEach(function (mutation) {
@@ -56,7 +56,7 @@
 
   function _init() {
     let obfuscationNum = _handleParam.call(this);
-    this.dom.innerHTML = obfuscate(obfuscationNum, this.dom.innerHTML);
+    this.dom.innerHTML = deObfuscate(obfuscationNum, this.dom.innerHTML);
   }
 
   // Retrieves the ROT number
@@ -73,6 +73,13 @@
           : c - 26
       );
     });
+  }
+  // Deobfuscation algorithm
+  function deObfuscate(obfuscationNum, sourceContent) {
+    let result = "";
+    obfuscationNum = (26 - obfuscationNum) % 26;
+    result = obfuscate(obfuscationNum, sourceContent);
+    return result;
   }
 
   // make lnObfuscate globaly avaliable
