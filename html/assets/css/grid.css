@@ -2,9 +2,15 @@
 	width: 100%;
 	height: 100vh;
 	overflow: hidden;
+	display: grid;
+    grid-template-areas: 'header'
+                        'main'
+                        'footer';
+    grid-template-rows: auto 1fr auto;
 }
 
 #ln-layout > header {
+	grid-area: header;
 	height: 50px;
 	width: 100%;
 	padding: 8px;
@@ -15,12 +21,11 @@
 }
 
 #ln-layout #main {
+    grid-area: main;
 	display: flex;
-	position: absolute;
-	left: 0;
-	top: 50px;
-	right: 0;
-	bottom: 30px;
+	flex-direction: row;
+	align-content: stretch;
+	flex-grow: 1;
 }
 #ln-layout #main > nav {
 	position: relative;
@@ -30,6 +35,9 @@
 	display: flex;
 	flex-direction: column;
 
+
+	padding: 8px;
+
 	background-color: blue;
 }
 
@@ -37,16 +45,15 @@
 	display: flex;
 	flex-direction: column;
 	width: 100%;
-	flex: 1;
 	overflow: auto;
 }
 
 #ln-layout footer {
+	grid-area: footer;
 	height: 30px;
 	width: 100%;
-	position: fixed;
+	/* position: fixed; */
 	bottom: 0;
-	box-sizing: border-box;
 
 	padding: 8px;
 
