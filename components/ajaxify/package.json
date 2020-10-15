@@ -1,5 +1,5 @@
 {
-  "name": "@livenetworks/ajaxify",
+  "name": "ln-ajaxify",
   "version": "1.0.0",
   "description": "Plain JavaScript Component. It convert regular links to ajax links.",
   "keywords": [

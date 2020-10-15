@@ -9,19 +9,19 @@ Plain Javascript Component. Not needed any additional libraries, frameworks.
 
 ## Usage
 ```html
-    <a href="#"
-    	ln-popup="width=300,height=300,scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no"
-    	target="windowName"
-    >
-    	Link Text
-    </a>
-    
-    <script src="popup.js" defer></script>
+<a href="#"
+	ln-popup="width=300,height=300,scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no"
+	target="windowName"
+>
+	Link Text
+</a>
+
+<script src="ln-popup.js" defer></script>
 ```
 
 ## Examples
 ```html
 <a 
-   href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2F%40livenetworks%2Fpopup"
-   ln-popup="width=555,height=745,scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no">Facebook</a>
+	href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2F%40livenetworks%2Fpopup"
+	ln-popup="width=555,height=745,scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no">Facebook</a>
 ```

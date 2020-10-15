@@ -1,13 +1,12 @@
 {
-  "name": "ln-popup",
-  "version": "1.1.5",
-  "description": "Plain JavaScript Component. It open native window.open popup without writing single line of JavaScript.",
+  "name": "ln-obfuscator",
+  "version": "1.0.1",
+  "description": "Plain JavaScript Component. Obfuscate email, telephone number, any personal data from spam crawlers without writing single line of JavaScript.",
   "keywords": [
-    "popup",
+    "obfuscator",
     "component",
     "native javascript",
-    "native popup",
-    "vanilla javascript",
+    "vanilla",
     "web components"
   ],
   "homepage": "https://github.com/liveNetworks/lnComponents",
@@ -18,10 +17,10 @@
   "bugs": {
     "url": "https://github.com/liveNetworks/lnComponents/issues"
   },
-  "main": "ln-popup.js",
+  "main": "ln-obfuscator.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Dalibor Sojic",
   "license": "ISC"
 }
