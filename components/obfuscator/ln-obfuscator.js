@@ -15,6 +15,9 @@
   }
 
   function _findElements(domRoot) {
+    if(domRoot.TEXT_NODE && domRoot.childNodes.length == 0) {
+      return;
+    }
     let items =
       Array.from(domRoot.querySelectorAll("[" + DOM_SELECTOR + "]")) || [];
 
