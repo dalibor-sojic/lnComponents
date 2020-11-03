@@ -31,8 +31,6 @@
 
   function _constructor(dom) {
     this.dom = dom;
-    console.log(this.dom);
-
     _init.call(this);
     return this;
   }
