@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LN PLAYER</title>
+</head>
+
+<body>
+    <!-- For testing purposes -->
+
+
+    <div ln-player>
+
+        <div>
+            <button ln-player-action="mute" type="button">mute</button>
+            <button ln-player-action="unmute" type="button">unmute</button>
+
+            <input name="range" type="range" min="0" max="100" ln-player-volume value="50">
+        </div>
+
+        <button ln-player-action="play" type="button">play</button>
+        <button ln-player-action="pause" type="button">pause</button>
+        <audio autoplay>
+            <source src="https://15913.live.streamtheworld.com/AMAZING_80S_S01.mp3" />
+        </audio>
+    </div>
+
+    <script src="../lnPlayer.js" defer></script>
+
+</body>
+
+</html>
