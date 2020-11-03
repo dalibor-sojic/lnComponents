@@ -1,0 +1,20 @@
+{
+  "name": "@livenetworks/player",
+  "version": "1.0.1",
+  "description": "Live Networks audio plaer remote controll.",
+  "main": "lnPlayer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Player",
+    "Audio",
+    "Video",
+    "Native",
+    "Component",
+    "Vanila",
+    "Javascript"
+  ],
+  "author": "Viktor Stojanov",
+  "license": "ISC"
+}

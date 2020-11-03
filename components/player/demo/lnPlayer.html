@@ -27,6 +27,24 @@
         </audio>
     </div>
 
+
+
+    <div ln-player>
+
+        <div>
+            <button ln-player-action="mute" type="button">mute</button>
+            <button ln-player-action="unmute" type="button">unmute</button>
+
+            <input name="range" type="range" min="0" max="100" ln-player-volume value="50">
+        </div>
+
+        <button ln-player-action="play" type="button">play</button>
+        <button ln-player-action="pause" type="button">pause</button>
+        <audio autoplay>
+            <source src="https://15913.live.streamtheworld.com/AMAZING_BLUES_S01.mp3" />
+        </audio>
+    </div>
+
     <script src="../lnPlayer.js" defer></script>
 
 </body>

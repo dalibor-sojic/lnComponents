@@ -1,5 +1,5 @@
 {
-  "name": "ln-obfuscator",
+  "name": "@livenetworks/ln-obfuscator",
   "version": "1.0.1",
   "description": "Plain JavaScript Component. Obfuscate email, telephone number, any personal data from spam crawlers without writing single line of JavaScript.",
   "keywords": [
