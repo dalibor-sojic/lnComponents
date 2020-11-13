@@ -1,7 +1,7 @@
 {
   "name": "@livenetworks/player",
-  "version": "1.0.1",
-  "description": "Live Networks audio plaer remote controll.",
+  "version": "1.0.2",
+  "description": "Live Networks audio player remote control.",
   "main": "lnPlayer.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

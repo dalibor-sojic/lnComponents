@@ -6,7 +6,7 @@
 // POPUPOPTIONS = "width=300,height=300,scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no"
 // (https://javascript.info/popup-windows)
 
-(function(){ 
+(function () {
 	const DOM_SELECTOR = 'ln-popup';
 	const DOM_ATTRIBUTE = 'lnPopup';
 
@@ -22,13 +22,12 @@
 	function _findElements(domRoot) {
 		let items = domRoot.querySelectorAll('[' + DOM_SELECTOR + ']') || [];
 
-		console.log(domRoot.querySelectorAll('[' + DOM_SELECTOR + ']'));
 
 		if (domRoot.hasAttribute(DOM_SELECTOR)) {
 			items.push(domRoot);
 		}
 
-		items.forEach(function(item) {
+		items.forEach(function (item) {
 			if (!item[DOM_ATTRIBUTE]) {
 				item[DOM_ATTRIBUTE] = new _constructor(item);
 			}
@@ -42,11 +41,10 @@
 	}
 
 	function _domObserver() {
-		let observer = new MutationObserver(function(mutations) {
-			mutations.forEach(function(mutation) {
+		let observer = new MutationObserver(function (mutations) {
+			mutations.forEach(function (mutation) {
 				if (mutation.type == 'childList') {
-					console.log(mutation.addedNodes);
-					mutation.addedNodes.forEach(function(item) {
+					mutation.addedNodes.forEach(function (item) {
 						_findElements(item);
 					})
 				}
@@ -80,16 +78,18 @@
 	// 	});
 	// }
 
-	
+
 	// Edit Below
 
 	let _target = null;
 
 	function _init() {
-		this.dom.onclick = function(event) {
+		const thiz = this;
+		this.dom.onclick = function (event) {
+			thiz.dom.rel = "noopener";
 			event = event || window.event;
 			event.preventDefault();
-			
+
 			_target = event.target;
 
 			window.open(_target.href, _target.target, _handleParams.call(this));
@@ -118,7 +118,7 @@
 	function _parseParams() {
 		let options = {};
 
-		_target.getAttribute('ln-popup').split(',').forEach(function(item) {
+		_target.getAttribute('ln-popup').split(',').forEach(function (item) {
 			const values = item.split('=');
 			options[values[0]] = values[1];
 		})
@@ -126,7 +126,7 @@
 	}
 	function _joinToString(options) {
 		result = [];
-		for(let item in options) {
+		for (let item in options) {
 			result.push(item + '=' + options[item]);
 		}
 		return result.join(',');
