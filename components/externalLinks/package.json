@@ -1,0 +1,29 @@
+{
+  "name": "@livenetworks/external-links",
+  "version": "1.0.0",
+  "description": "Live Networks script that converts all links to outer domains to open in a new window and adds the rel attribute of 'noreferrer noopener'",
+  "main": "ln-external-links.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/liveNetworks/lnComponents"
+  },
+  "keywords": [
+    "_blank",
+    "noopener",
+    "noopener",
+    "hostname",
+    "new window",
+    "native javascript",
+    "vanilla",
+    "component",
+    "web component"
+  ],
+  "bugs": {
+    "url": "https://github.com/liveNetworks/lnComponents/issues"
+  },
+  "author": "DraciVik",
+  "license": "ISC"
+}
